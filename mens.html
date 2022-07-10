@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mens Page</title>
+    <style>
+        #container{
+            /* border :1px solid red; */
+            width: 95%;
+            margin: auto;
+            display: flex;
+        }
+        #container>div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* border :1px solid red; */
+            width: 50%;
+            
+        }
+        #container>div:nth-child(1) > img{
+            width: 310px;
+            height: 350px;
+        } 
+        #container>div:nth-child(2) > img{
+            width: 400px;
+            height: 350px;
+        } 
+        #container> div> h2{
+            text-align: left;
+            margin-top: 5px;
+            font-size: 30px;
+        }
+        #container> div> p{
+            margin-top: -10px;
+            font-size: 25px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+</body>
+</html>
+<script>
+    let mens = [
+        {
+            image : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ14GJDeX4wF9Sd47kwGGkVgH4BXxwP-vI9Qw&usqp=CAU",
+            name: "Pause",
+            detail:"Men Cotton Long Sleeves Shrug",
+            re :"₹359 -76%"
+        },
+        {
+            image : "https://5.imimg.com/data5/OH/BI/MY-11671637/selection_020-1000x1000.png",
+            name: "JUBINATION",
+            detail: "Men Wool Sleeveless Sweater Pack Of 1",
+            re: "₹799 -47%"
+        }
+
+    ];
+    for(let i=0; i<mens.length; i++){
+        let ele = mens[i];
+        // console.log(ele);
+        let div = document.createElement("div");
+        let imag = document.createElement("img");
+        imag.setAttribute("src", ele.image);
+        console.log(imag);
+        let head = document.createElement("h2");
+        head.innerText = ele.name;
+        head.style.marginLeft="-220px"
+        let para = document.createElement("p");
+        para.innerText = ele.detail;
+        para.style.color="grey"
+        let par = document.createElement("h3");
+        par.innerText = ele.re;
+        par.style.marginTop="-10px"
+        par.style.marginLeft="-200px"
+        par.style.fontFamily="arial"
+        par.style.fontSize="25px"
+        div.append(imag, head, para, par);
+        document.querySelector("#container").append(div);
+    }
+</script>
